@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- In-vehicle (Pleos Connect / Android Automotive) app. Not marked required so the
+         APK can also be installed on a plain emulator, where it runs on simulated signals. -->
+    <uses-feature android:name="android.hardware.type.automotive" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false" />
+
+    <!-- Pleos Vehicle SDK: read-only permissions only. No CONTROL_* permission is requested. -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />    <!-- Odometer, Gear -->
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />   <!-- EvBattery -->
+    <uses-permission android:name="pleos.car.permission.CAR_INFO" />     <!-- VIN -->
+    <uses-permission android:name="pleos.car.permission.CAR_DOORS" />    <!-- Door lock -->
+    <uses-permission android:name="pleos.car.permission.CAR_WINDOWS" />  <!-- Window position -->
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />   <!-- Telltales -->
+    <!-- Pleos FusedLocation SDK -->
+    <uses-permission android:name="pleos.car.permission.FUSED_LOCATION" />
+
+    <application
+        android:name=".BizmileApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bizmile">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|density"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- While driving the app only shows a non-interactive recording screen. -->
+            <meta-data android:name="distractionOptimized" android:value="true" />
+        </activity>
+    </application>
+</manifest>

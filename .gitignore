@@ -1,0 +1,19 @@
+# Build output
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+.kotlin/
+
+# Signing material (never commit)
+keystore.properties
+*.jks
+*.keystore
+
+# Not part of the public repo: application form (contains personal contact info)
+# and the private idea-board clone
+*.pdf
+*.docx
+hmg-appdev-2026/
