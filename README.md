@@ -6,6 +6,8 @@
 - 플랫폼: Pleos Connect (Android Automotive) · Kotlin · Jetpack Compose
 - APK: [`apk/차곡차곡_비즈마일_release.apk`](apk/차곡차곡_비즈마일_release.apk)
 
+- 데모 영상 : https://youtu.be/h4z5EGU45i8
+
 ## 이 저장소가 보여주는 것
 
 기획서의 기능 중 **차 안에서만 가능한 부분**을 끝까지 동작하게 만든 프로토타입입니다.
